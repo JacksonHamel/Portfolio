@@ -499,7 +499,7 @@ html[data-mode="edit"] .addrow{display:block}
   <p class="intro" id="mastAbout">MEng student at UBC combining hands-on design with reliability experience. I’ve taken parts from CAD and FEA through fabrication and testing, and spent two years diagnosing equipment failures from oil analysis data. I’m looking for a summer 2027 co-op where I can design and validate mechanical systems.</p>
   <div class="contactbar" id="mastContact"></div>
 
-  <div class="samplebanner" id="sampleBanner">
+  <div class="samplebanner" id="sampleBanner" hidden>
     <p><strong>These are sample projects.</strong> Turn on Edit mode to replace them with your own.</p>
     <button class="btn" id="clearSamples">Delete samples</button>
   </div>
@@ -1701,6 +1701,7 @@ $("clearSamples").addEventListener("click", function(){
   }
   if (isSample) $("sampleBanner").hidden = false;
   if (LOCKED){
+    $("sampleBanner").hidden = true;
     $("modeBtn").style.display = "none";
     $("printBtn").style.display = "";
   }
